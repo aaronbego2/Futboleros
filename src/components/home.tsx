@@ -1,4 +1,4 @@
-import { FriendLeagueDashboard } from './friends/FriendLeagueDashboard';
+import { ViewerView } from './friends/ViewerView';
 import { useTheme } from '@/contexts/ThemeContext';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 
@@ -23,7 +23,7 @@ function Home() {
                 className={`font-bold text-xl transition-colors duration-300 ${isDark ? "text-white" : "text-[#2b193e]"}`}
                 style={{ fontFamily: "Space Grotesk, sans-serif" }}
               >
-                Futbol App - Liga de Amigos
+                Liga de Amigos
               </span>
             </div>
             <ThemeToggle />
@@ -32,7 +32,7 @@ function Home() {
       </div>
       
       <div className="pt-16">
-        <FriendLeagueDashboard />
+        <ViewerView />
       </div>
     </div>
   );

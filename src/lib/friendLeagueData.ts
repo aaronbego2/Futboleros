@@ -38,6 +38,19 @@ export function addPlayer(player: Omit<FriendPlayer, 'id' | 'goals' | 'assists' 
   return newPlayer;
 }
 
+export function updatePlayer(playerId: string, updates: Partial<Pick<FriendPlayer, 'fullName' | 'alias' | 'dorsal' | 'position'>>): FriendPlayer | null {
+  const data = getStoredData();
+  const playerIndex = data.players.findIndex(p => p.id === playerId);
+  if (playerIndex === -1) return null;
+  
+  data.players[playerIndex] = {
+    ...data.players[playerIndex],
+    ...updates,
+  };
+  saveData(data);
+  return data.players[playerIndex];
+}
+
 export function removePlayer(playerId: string): void {
   const data = getStoredData();
   data.players = data.players.filter(p => p.id !== playerId);

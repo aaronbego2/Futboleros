@@ -52,6 +52,8 @@ export type MatchStatus = 'All' | 'Live' | 'Upcoming' | 'Finished';
 export interface FriendPlayer {
   id: string;
   fullName: string;
+  alias: string;
+  dorsal: number;
   position: 'Portero' | 'Defensa' | 'Mediocampista' | 'Delantero';
   goals: number;
   assists: number;
